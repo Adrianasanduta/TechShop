@@ -4,7 +4,7 @@ This is a pilot project created during Endava Internship and should look like a 
 
 # Topic
 
-We will have brand cattegories(ex: Apple, Samsung, Asus) and products(laptops & phones) by each cattegory.
+We will have brand categories(ex: Apple, Samsung, Asus) and products(laptops & phones) by each category.
 
 ## Requiremenets
 
