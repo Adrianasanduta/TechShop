@@ -17,3 +17,13 @@ Requirements (points 1-7 are mandatory, point 8 is not mandatory):
 - Field and data validations
 - Add the project to AWS
 - Nice to have what you want to add.
+
+## Development
+
+For this project we use XAMPP. 
+
+1. Open XAMPP and start Apache and MySQL
+2. Clone this repo into your XAMPP folder, ex: `/C/xampp/htdocs/`
+3. Open phpmyadmin
+4. Create `techshop` database
+5. Import database from `techshop.sql`
