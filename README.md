@@ -27,3 +27,7 @@ For this project we use XAMPP.
 3. Open phpmyadmin
 4. Create `techshop` database
 5. Import database from `techshop.sql`
+
+## Libraries
+
+- For layout we use http://flexboxgrid.com
