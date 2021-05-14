@@ -1,0 +1,44 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+header,
+footer {
+    background-color: #FAF181;
+}
+
+main {
+    background-color: #E1E1E1;
+    flex: 1 0 auto;
+    min-height: auto;
+}
+
+.categories {
+    background-color: antiquewhite;
+    padding: 20px;
+}
+
+.products {
+    background-color: aqua;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    border: 1px solid #11FF00;
+}
