@@ -17,7 +17,7 @@ function loadData() {
                     <div class="card product-card" data-id=${res[i].product_id}>   
                         <div class="edit-container">
                             <i onclick="editProduct(${res[i].product_id})" class="far fa-edit"></i>
-                            <i class="far fa-trash-alt"></i>
+                            <i onclick="deleteProduct(${res[i].product_id})"class="far fa-trash-alt"></i>
                         </div>  
                         <img src='${res[i].product_image}' class='card-img-top prod-image'>
                         <div class='card-body'>
@@ -45,7 +45,7 @@ function loadDataCat() {
                 <div class='list-group list-group-flush regular'>
                     <div class="edit-container">
                         <i onclick="editCategory(${res[i].brand_id})"class="far fa-edit"></i>
-                        <i class="far fa-trash-alt"></i>
+                        <i onclick="deleteCategory(${res[i].brand_id})"class="far fa-trash-alt"></i>
                     </div>  
                     <button type='button' class='list-group-item list-group-item-action '> ${res[i].brand_name}</button>
                 </div>`;
