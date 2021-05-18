@@ -90,3 +90,18 @@ position: absolute;
      height: 100%;
      padding: 1em;
 }
+
+.edit-container  {
+    display: none;
+    position: absolute;
+    right: 5px;
+    z-index: 100;
+}
+
+.card:hover .edit-container {
+    display: flex;
+}
+
+.list-group:hover .edit-container {
+    display: flex;
+}
