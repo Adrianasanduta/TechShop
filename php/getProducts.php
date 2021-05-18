@@ -22,3 +22,4 @@
    }
    mysqli_close($dbc);
    echo json_encode($products);
+   

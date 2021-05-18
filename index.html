@@ -48,15 +48,11 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Sort Items
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li class="sort" data-sort='asc' onclick="sortData('product_price')"><a
-                                    class="dropdown-item" href="#">Asc by price</a></li>
-                            <li class="sort" data-sort='desc' onclick="sortData('product_price')"><a
-                                    class="dropdown-item" href="#">Desc by price</a></li>
-                            <li class="sort" data-sort='asc' onclick="sortData('product_name')"><a class="dropdown-item"
-                                    href="#">Asc by name</a></li>
-                            <li class="sort" data-sort='desc' onclick="sortData('product_name')"><a
-                                    class="dropdown-item" href="#">Desc by name</a></li>
+                        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
+                          <li class='dropdown-item' onclick="sortData('product_price','asc')">Asc by price</li>
+                          <li class='dropdown-item'  onclick="sortData('product_price','desc')">Desc by price</li>
+                          <li class='dropdown-item' onclick="sortData('product_name', 'asc')">Asc by name</li>
+                          <li class='dropdown-item' onclick="sortData('product_name', 'desc')" >Desc by name</li>
                         </ul>
                     </div>
                     <div class="row center-xs" id="display-products">
