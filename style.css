@@ -62,6 +62,10 @@ position: absolute;
 .btn-outline-success {
     border-color: #11FF00;
     color: #11FF00;
+    width: 45px;
+}
+header{
+    padding: 1%;
 }
 /*end of styling category bar*/
 
