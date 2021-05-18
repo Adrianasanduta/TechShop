@@ -12,16 +12,21 @@ function loadData() {
             res = JSON.parse(res);
             var result = "";
             for (let i = 0; i < res.length; i++) {
-                result += "<div class='col-xs-3 data-cards'>";
-                result += `<div class="card product-card" data-id=${res[i].product_id}>`;
-                result += "<img src='" + res[i].product_image + "' class='card-img-top prod-image'>";
-                result += "<div class='card-body'>";
-                result += "<h5 class='card-title prod-title'>" + res[i].product_name + "</h5>";
-                result += "<p class='card-text prod-desc'>" + res[i].product_description + "</p>";
-                result += "<h5 class='card-text'>" + res[i].product_price + " Lei</h5>";
-                result += "</div>";
-                result += "</div>";
-                result += "</div>";
+                result += `
+                <div class='col-xs-3 data-cards'>
+                    <div class="card product-card" data-id=${res[i].product_id}>   
+                        <div class="edit-container">
+                            <i onclick="editProduct(${res[i].product_id})" class="far fa-edit"></i>
+                            <i onclick="deleteProduct(${res[i].product_id})"class="far fa-trash-alt"></i>
+                        </div>  
+                        <img src='${res[i].product_image}' class='card-img-top prod-image'>
+                        <div class='card-body'>
+                            <h5 class='card-title prod-title'>${res[i].product_name}</h5>
+                            <p class='card-text prod-desc'>${res[i].product_description}</p>
+                            <h5 class='card-text'>${res[i].product_price} Lei</h5>
+                        </div>
+                    </div>
+                </div>`;
             }
             $("#display-products").html(result);
         }
@@ -36,11 +41,17 @@ function loadDataCat() {
             res = JSON.parse(res);
             var result = "";
             for (let i = 0; i < res.length; i++) {
-                result += "<div class='list-group list-group-flush regular'>";
-                result += "<button type='button' class='list-group-item list-group-item-action '>"+res[i].brand_name+"</button>";
-                result += "</div>";
+                result += `
+                <div class='list-group list-group-flush regular'>
+                    <div class="edit-container">
+                        <i onclick="editCategory(${res[i].brand_id})"class="far fa-edit"></i>
+                        <i onclick="deleteCategory(${res[i].brand_id})"class="far fa-trash-alt"></i>
+                    </div>  
+                    <button type='button' class='list-group-item list-group-item-action '> ${res[i].brand_name}</button>
+                </div>`;
             }
             $("#display-categories").html(result);
         }
     });
 }
+
