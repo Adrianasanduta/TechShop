@@ -27,21 +27,43 @@ main {
 
 .categories {
     background-color: antiquewhite;
-    padding: 20px;
+    padding: 0px;
+    border: 1px solid #11FF00;
+    position:relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .products {
     background-color: aqua;
     padding: 20px;
 }
-
-ul {
-    list-style: none;
+/* styling the category bar */
+.regular > .list-group-item{
+    border-color: #11FF00;
+    border-radius:0%;
 }
-
-li {
-    border: 1px solid #11FF00;
+.regular .list-group-item:last-child {
+    border-bottom: 1px solid #11FF00;
 }
+.list-group {
+    border-radius:0%;
+}
+#list-header {
+    width:100%;
+   border-bottom: 1px solid #11FF00;
+   border-top: 1px solid #11FF00;
+}
+.list-bottom { 
+right: 1em;
+bottom: 1em;
+position: absolute;
+}
+.btn-outline-success {
+    border-color: #11FF00;
+    color: #11FF00;
+}
+/*end of styling category bar*/
 
 .data-cards{
     padding: 10px;

@@ -1,5 +1,6 @@
 $(document).ready(function () {
     loadData();
+    loadDataCat();
 });
 
 function loadData() {
@@ -23,6 +24,23 @@ function loadData() {
                 result += "</div>";
             }
             $("#display-products").html(result);
+        }
+    });
+}
+function loadDataCat() {
+    $.ajax({
+        type: "GET",
+        url: "php/getCategories.php",
+        success: function (res) {
+
+            res = JSON.parse(res);
+            var result = "";
+            for (let i = 0; i < res.length; i++) {
+                result += "<div class='list-group list-group-flush regular'>";
+                result += "<button type='button' class='list-group-item list-group-item-action '>"+res[i].brand_name+"</button>";
+                result += "</div>";
+            }
+            $("#display-categories").html(result);
         }
     });
 }
