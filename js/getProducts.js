@@ -16,7 +16,7 @@ function loadData() {
                 <div class='col-xs-3 data-cards'>
                     <div class="card product-card" data-id=${res[i].product_id}>   
                         <div class="edit-container">
-                            <i class="far fa-edit"></i>
+                            <i onclick="editProduct(${res[i].product_id})" class="far fa-edit"></i>
                             <i class="far fa-trash-alt"></i>
                         </div>  
                         <img src='${res[i].product_image}' class='card-img-top prod-image'>
@@ -44,7 +44,7 @@ function loadDataCat() {
                 result += `
                 <div class='list-group list-group-flush regular'>
                     <div class="edit-container">
-                        <i class="far fa-edit"></i>
+                        <i onclick="editCategory(${res[i].brand_id})"class="far fa-edit"></i>
                         <i class="far fa-trash-alt"></i>
                     </div>  
                     <button type='button' class='list-group-item list-group-item-action '> ${res[i].brand_name}</button>
@@ -54,3 +54,4 @@ function loadDataCat() {
         }
     });
 }
+
