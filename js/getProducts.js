@@ -13,7 +13,7 @@ function loadData() {
             var result = "";
             for (let i = 0; i < res.length; i++) {
                 result += `
-                <div class='col-xs-3 data-cards'>
+                <div class='col-xs-3 data-cards text-center'>
                     <div class="card product-card" data-id=${res[i].product_id}>   
                         <div class="edit-container">
                             <i onclick="editProduct(${res[i].product_id})" class="far fa-edit"></i>

@@ -13,7 +13,7 @@ function sortData(columnName, order) {
                 res = JSON.parse(res);
                 var result = "";
                 for (let i = 0; i < res.length; i++) {
-                    result += "<div class='col-xs-3 data-cards'>";
+                    result += "<div class='col-xs-3 data-cards text-center'>";
                     result += `<div class="card product-card" data-id=${res[i].product_id}>`;
                     result += "<img src='" + res[i].product_image + "' class='card-img-top prod-image'>";
                     result += "<div class='card-body'>";
@@ -41,7 +41,7 @@ function sortData(columnName, order) {
             res = JSON.parse(res);
             var result = "";
             for (let i = 0; i < res.length; i++) {
-                result += "<div class='col-xs-3 data-cards'>";
+                result += "<div class='col-xs-3 data-cards text-center'>";
                 result += `<div class="card product-card" data-id=${res[i].product_id}>`;
                 result += "<img src='" + res[i].product_image + "' class='card-img-top prod-image'>";
                 result += "<div class='card-body'>";
