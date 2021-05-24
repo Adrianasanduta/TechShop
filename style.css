@@ -39,35 +39,36 @@ main {
     background-color: aqua;
     padding: 20px;
 }
-/* styling the category bar */
-.regular > .list-group-item{
-    border-color: #11FF00;
-    border-radius:0%;
-}
+
+/* styling the category bar*/
 .regular .list-group-item:last-child {
     border-bottom: 1px solid #11FF00;
 }
+
 .list-group {
     border-radius:0%;
 }
-#list-header {
+
+.list-header {
     width:100%;
    border-bottom: 1px solid #11FF00;
    border-top: 1px solid #11FF00;
 }
-.list-bottom { 
-right: 1em;
-bottom: 1em;
-position: absolute;
+.list-bottom {
+    width:100%;
+   border-bottom: 1px solid #11FF00;
 }
+
 .btn-outline-success {
     border-color: #11FF00;
     color: #11FF00;
     width: 45px;
 }
+
 header{
     padding: 1%;
 }
+
 /*end of styling category bar*/
 
 .data-cards{

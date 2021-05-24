@@ -25,22 +25,47 @@
                 <h1 class="box">TechShop</h1>
             </div>
             <div class="col-xs-2 search-container"><input class="form-control box" type="search" name="Search"
-                    id="search" placeholder="&#x1F50E;&#xFE0E; Search"  ></div>
+                    id="search" placeholder="&#x1F50E;&#xFE0E; Search"></div>
         </div>
     </header>
     <main>
         <div class="row">
-            <div class="col-xs-offset-1 center-xs col-xs-2 categories ">
-                <div class="list-group list-group-flush " id="list-header">
-                    <button type="button" class="list-group-item list-group-item-action ">Categories</button>
+            <div class="col-xs-offset-1 center-xs col-xs-2 categories">
+                <div class="list-group list-group-flush list-header">
+                    <button type="button" class="list-group-item list-group-item-action">Categories</button>
                 </div>
                 <div id="display-categories">
                     <!--html inserted via JS function and php. Check getProduct.js-->
                 </div>
-                <div class="list-bottom"><button type="button" class="btn btn-outline-success">
-                        <i class="fas fa-plus"></i>
-                    </button></div>
+                <div class="list-group list-group-flush list-bottom">
+                    <div class="list-group-item">
+                        <button type="button" class="btn btn-outline-success" id="addCategory" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
+            <!-- Modal for add new category-->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Enter the name of the category:</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" id="categoryName" name="name_brand">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick = "addNewCategory()" data-bs-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of modal-->
             <div class="col-xs-8 products">
                 <div class="row">
                     <div class="dropdown">
@@ -72,6 +97,7 @@
     <script src="js/sortProducts.js"></script>
     <script src="js/edit.js"></script>
     <script src="js/delete.js"></script>
+    <script src="js/addNewCategory.js"></script>
 </body>
 
 </html>
