@@ -1,6 +1,12 @@
 function editProduct(id) {
     console.log("editing product " + id);
+    $(".edit-dialog").attr("open", true);
 };
+// $(window).click(function (event) {
+//     if (!$(event.target).closest(".edit-dialog").length) {
+//         $(".edit-dialog").attr("open", false);
+//     }
+// });
 
 //edit functionality for category
 //function for displaying inputs modal with data from db as values

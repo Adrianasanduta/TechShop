@@ -111,3 +111,8 @@ header{
 .list-group:hover .edit-container {
     display: flex;
 }
+.add-product-dialog {
+    position: fixed;
+    top: 45%;
+    z-index: 101;
+}
