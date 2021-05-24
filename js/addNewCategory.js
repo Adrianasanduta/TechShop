@@ -12,8 +12,7 @@ function addNewCategory() {
             url: "php/addCategory.php",
             data: obj,
             success: function (res) {
-                console.log(res)
-                loadData();
+                console.log(res);
                 loadDataCat();
                 $('#categoryName').val("");
             }

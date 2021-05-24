@@ -6,7 +6,7 @@
 
     $categories = array();
     $dbc = mysqli_connect('localhost', 'root', '', 'techshop');
-    $query = "SELECT id_brand, brand_name FROM brand";
+    $query = "SELECT id_brand, brand_name FROM brand ORDER BY brand.id_brand ASC";
     $data = mysqli_query($dbc, $query);
    while($row = mysqli_fetch_assoc($data)){
         $category = new category();
