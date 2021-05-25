@@ -16,6 +16,7 @@ h1 {
 }
 img {
     width: 50px;
+    height: 50px;
 
 }
 header {
@@ -29,13 +30,13 @@ footer {
 }
 
 main {  
-    background-color: rgb(230, 235, 235);
+    background-color: rgb(247, 248, 248);
     flex: 1 0 auto;
     min-height: auto;
 }
 
 .categories {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(247, 248, 248);
     padding: 0px;
     border: 1px solid #b9ecb6;
     position:relative;
@@ -44,7 +45,7 @@ main {
 }
 
 .products {
-    background-color: rgb(230, 235, 235);
+    background-color: rgb(247, 248, 248);
     padding: 20px;
 }
 /* styling the category bar */
