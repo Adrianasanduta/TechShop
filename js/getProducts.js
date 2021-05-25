@@ -44,7 +44,7 @@ function loadDataCat() {
                 result += `
                 <div class='list-group list-group-flush regular'>
                     <div class="edit-container">
-                        <i onclick="editCategory(${res[i].brand_id})"class="far fa-edit"></i>
+                        <i onclick="showCategoryEditor(${res[i].brand_id})" class="far fa-edit"></i>
                         <i onclick="deleteCategory(${res[i].brand_id})"class="far fa-trash-alt"></i>
                     </div>  
                     <button type='button' class='list-group-item list-group-item-action '> ${res[i].brand_name}</button>
