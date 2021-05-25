@@ -38,7 +38,7 @@ main {
 .categories {
     background-color: rgb(247, 248, 248);
     padding: 0px;
-    border: 1px solid #b9ecb6;
+    border: 1px solid #421774;
     position:relative;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -50,11 +50,11 @@ main {
 }
 /* styling the category bar */
 .regular > .list-group-item{
-    border-color: #61b85b;
+    border-color: #421774;
     border-radius:0%;
 }
 .regular .list-group-item:last-child {
-    border-bottom: 1px solid #61b85b;
+    border-bottom: 1px solid #421774;
 }
 
 .list-group {
@@ -63,17 +63,17 @@ main {
 
 .list-header {
     width:100%;
-   border-bottom: 1px solid #61b85b;
-   border-top: 1px solid #61b85b;
+   border-bottom: 1px solid #421774;
+   border-top: 1px solid #421774;
 }
 .list-bottom {
     width:100%;
-   border-bottom: 1px solid #11FF00;
+   border-bottom: 1px solid #421774;
 }
 
 .btn-outline-success {
-    border-color: #61b85b;
-    color: #61b85b;
+    border-color: #421774;
+    color: #421774;
     width: 45px;
 }
 
