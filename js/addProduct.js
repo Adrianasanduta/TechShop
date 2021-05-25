@@ -1,10 +1,11 @@
-function addProduct() {
+function addProduct(id) {
     console.log("new Product Added");
     let obj = {
         product_name: $("#productName").val(),
         product_desc: $("#productDesc").val(),
         product_price: Number($("#productPrice").val()),
         product_image: $("#productImage").val(),
+        product_cat: $("#productCat").val(),
     };
     if (
         !obj.product_name ||
@@ -25,6 +26,7 @@ function addProduct() {
                 $("#productDesc").val("");
                 $("#productPrice").val("");
                 $("#productImage").val("");
+                
             },
         });
     }
