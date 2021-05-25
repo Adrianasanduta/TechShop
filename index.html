@@ -85,7 +85,48 @@
                     </div>
                     <div class="row" id="display-products">
                     </div>
-                    <button onclick="addProduct()" id="add-product">Add product</button>
+                    <button type="button" class="" id="addProduct" data-bs-toggle="modal"
+                            data-bs-target="#add-product-modal">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <!-- Modal for add new product-->
+                    <div class="modal fade" id="add-product-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Enter the name of the product:</h5>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" class="form-control" id="productName" name="name_product">
+                            </div>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Enter the description of the product:</h5>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" class="form-control" id="productDesc" name="desc_product">
+                            </div>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Enter the price of the product:</h5>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" class="form-control" id="productPrice" name="name_price">
+                            </div>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Enter the image URL of the product:</h5>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" class="form-control" id="productImage" name="name_image">
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-success" onclick="addProduct()"
+                                    data-bs-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of modal-->
                 </div>
             </div>
         </div>
