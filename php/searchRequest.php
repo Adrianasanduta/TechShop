@@ -1,47 +1,4 @@
 <?php
-// 	// include database connection file
-
-// 	$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
-    
-
-// 	// fetch data from student table..
-
-// 	$output = "";
-// 	if (isset($_POST['query'])) {
-// 		$search = mysqli_real_escape_string($dbc, $_POST['query']);
-// 		$sql = "SELECT * FROM product p JOIN brand b ON p.id_brand=b.id_brand WHERE p.product_name LIKE '%$search%' || p.product_description LIKE '%$search%' || 
-// 				p.product_price LIKE '%$search%' || b.brand_name LIKE '%$search%'";
-// 	}else{
-// 		$sql = "SELECT * FROM students ORDER BY id DESC";
-// 	}
-// 	$query = mysqli_query($dbc, $sql);
-// 	if (mysqli_num_rows($query) > 0) {
-// 		while ($row = mysqli_fetch_assoc($query)) {
-// 		$output .= `<div class='col-xs-3 data-cards text-center'>
-// 		<div class="card product-card" data-id={$row['product_id']}>   
-// 			<div class="edit-container">
-// 				<i onclick="editProduct({$row['product_id']})" class="far fa-edit"></i>
-// 				<i onclick="deleteProduct({$row['product_id']})"class="far fa-trash-alt"></i>
-// 			</div>  
-// 			<img src='{$row['product_image']}' class='card-img-top prod-image'>
-// 			<div class='card-body'>
-// 				<h5 class='card-title prod-title'>{$row['product_name']}</h5>
-// 				<p class='card-text prod-desc'>{$row['product_description']}</p>
-// 				<h5 class='card-text'>{$row['product_price']} Lei</h5>
-// 			</div>
-// 		</div>
-// 	</div>`;
-// 		}
-// 		echo $output;
-// 	}else{
-// 		echo "<h5>No record found</h5>";
-// 	}
-
-
-//    mysqli_close($dbc);
-
-
-
 
 class Product{
 	public $product_id;
