@@ -23,7 +23,7 @@ function loadData() {
                         <div class='card-body'>
                             <h5 class='card-title prod-title'>${res[i].product_name}</h5>
                             <p class='card-text prod-desc'>${res[i].product_description}</p>
-                            <h5 class='card-text'>${res[i].product_price} Lei</h5>
+                            <h5 class='card-text prod-price'>${res[i].product_price} Lei</h5>
                         </div>
                     </div>
                 </div>`;

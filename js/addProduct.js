@@ -5,13 +5,14 @@ function addProduct(id) {
         product_desc: $("#productDesc").val(),
         product_price: Number($("#productPrice").val()),
         product_image: $("#productImage").val(),
-        product_cat: $("#productCat").val(),
+        product_cat: Number($("#productCat").val()),
     };
     if (
         !obj.product_name ||
         !obj.product_desc ||
         !obj.product_price ||
-        !obj.product_image
+        !obj.product_image ||
+        !obj.product_cat
     ) {
         alert("No blank values allowed");
     } else {
@@ -26,7 +27,7 @@ function addProduct(id) {
                 $("#productDesc").val("");
                 $("#productPrice").val("");
                 $("#productImage").val("");
-                
+
             },
         });
     }
