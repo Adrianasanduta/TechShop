@@ -25,10 +25,10 @@
                 <img src="images/MicrosoftTeams-image.png">
             </div>
             <div class="col-xs-2 search-container"><input class="form-control box" type="search" name="Search"
-                    id="search_box" placeholder="&#x1F50E;&#xFE0E; Search"></div> 
-                    <button id="search_button" type="button" class="btn btn-primary" style="width:40px;">
-                        <i class="fas fa-search"></i>
-                      </button>
+                    id="search_box" placeholder="&#x1F50E;&#xFE0E; Search"></div>
+            <button id="search_button" type="button" class="btn btn-primary" style="width:40px;">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
     </header>
     <main>
@@ -58,7 +58,8 @@
                             <h5 class="modal-title" id="staticBackdropLabel">Enter the name of the category:</h5>
                         </div>
                         <div class="modal-body">
-                            <input type="text" class="form-control" id="categoryName" name="name_brand" placeholder="Enter the name of brand">
+                            <input type="text" class="form-control" id="categoryName" name="name_brand"
+                                placeholder="Enter the name of brand">
                         </div>
                         <div class="modal-footer justify-content-center">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -86,41 +87,46 @@
                     <div class="row" id="display-products">
                     </div>
                     <button type="button" class="btn btn-outline-primary" id="addProduct" data-bs-toggle="modal"
-                            data-bs-target="#add-product-modal" onclick="displayBrandList()">
-                            <i class="fas fa-plus"></i>
-                        </button>
+                        data-bs-target="#add-product-modal" onclick="displayBrandList()">
+                        <i class="fas fa-plus"></i>
+                    </button>
 
-                        <!-- Modal for add new product-->
-                    <div class="modal fade" id="add-product-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Enter new product:</h5>
-                            </div>
-                            <div class="modal-body">
-                                <input type="text" class="form-control" id="productName" name="name_product" placeholder="Enter the name">
-                         <br>
-                         <div id="brandList">
-                                <label for="brand">Choose a brand:</label>    
-                          <select name="cars" id="display-brand-list"> </select>
-                        </div>
-                          <br>
-                          <input type="text" class="form-control" id="productDesc" name="desc_product" placeholder="Enter the description">
-                          <br>
-                          <input type="text" class="form-control" id="productPrice" name="name_price" placeholder="Enter the price">    
-                          <br>
-                          <input type="text" class="form-control" id="productImage" name="name_image" placeholder="Insert the image URL here">
-                        </div>
-                            <div class="modal-footer justify-content-center">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-outline-primary" onclick="addProduct()"
-                                    data-bs-dismiss="modal">Save</button>
+                    <!-- Modal for add new product-->
+                    <div class="modal fade" id="add-product-modal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Enter new product:</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" class="form-control" id="productName" name="name_product"
+                                        placeholder="Enter the name">
+                                    <br>
+                                    <div id="brandList">
+                                        <label for="brand">Choose a brand:</label>
+                                        <select name="cars" id="productCat"> </select>
+                                    </div>
+                                    <br>
+                                    <input type="text" class="form-control" id="productDesc" name="desc_product"
+                                        placeholder="Enter the description">
+                                    <br>
+                                    <input type="number" min="0.01" step="0.01" class="form-control" id="productPrice"
+                                        name="name_price" placeholder="Enter the price">
+                                    <br>
+                                    <input type="text" class="form-control" id="productImage" name="name_image"
+                                        placeholder="Insert the image URL here">
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-outline-primary" onclick="addProduct()"
+                                        data-bs-dismiss="modal">Save</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- End of modal-->
+                    <!-- End of modal-->
                 </div>
             </div>
         </div>
