@@ -19,3 +19,13 @@ function addNewCategory() {
         });
     }
 }
+// function onFileInputChange(input) {
+//     let photo = input.files[0];
+//     var reader = new FileReader();
+//     var imgtag = input.parentElement.parentElement.getElementsByClassName("avatar-image")[0];
+//     imgtag.title = photo.name;
+//     reader.onload = function (event) {
+//         imgtag.src = event.target.result;
+//     };
+//     reader.readAsDataURL(photo);
+// }
