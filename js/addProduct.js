@@ -2,8 +2,8 @@ function addProduct(id) {
     console.log("new Product Added");
     let photo = $("#productImage").prop("files")[0];
     let obj = {
-        product_name: $("#productName").val(),
-        product_desc: $("#productDesc").val(),
+        product_name: $("#productName").val().trim(),
+        product_desc: $("#productDesc").val().trim(),
         product_price: Number($("#productPrice").val()),
         product_cat: Number($("#productCat").val()),
     };

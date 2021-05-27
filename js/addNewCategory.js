@@ -1,9 +1,9 @@
 function addNewCategory() {
     console.log("new Category Added");
     let obj = {
-        brand_name: $('#categoryName').val()
+        brand_name: $('#categoryName').val().trim(),
     };
-    if ($('#categoryName').val() == "") {
+    if ($('#categoryName').val().trim() == "") {
         alert('No blank values allowed');
     }
     else {
