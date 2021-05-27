@@ -4,7 +4,7 @@ function addNewCategory() {
         brand_name: $('#categoryName').val()
     };
     if ($('#categoryName').val() == "") {
-        alert('No blank values allowed')
+        alert('No blank values allowed');
     }
     else {
         $.ajax({
@@ -13,19 +13,10 @@ function addNewCategory() {
             data: obj,
             success: function (res) {
                 console.log(res);
+                $("#staticBackdrop").modal("hide");
                 loadDataCat();
                 $('#categoryName').val("");
             }
         });
     }
 }
-// function onFileInputChange(input) {
-//     let photo = input.files[0];
-//     var reader = new FileReader();
-//     var imgtag = input.parentElement.parentElement.getElementsByClassName("avatar-image")[0];
-//     imgtag.title = photo.name;
-//     reader.onload = function (event) {
-//         imgtag.src = event.target.result;
-//     };
-//     reader.readAsDataURL(photo);
-// }

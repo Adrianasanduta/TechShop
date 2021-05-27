@@ -29,6 +29,7 @@ function addProduct(id) {
                 data: obj,
                 success: function (res) {
                     console.log(res);
+                    $("#add-product-modal").modal("hide");
                     loadData();
                     $("#productName").val("");
                     $("#productDesc").val("");
