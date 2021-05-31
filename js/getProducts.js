@@ -78,6 +78,9 @@ function showProductsByCategory(id) {
                 </div>`;
         }
     }
+    if (result == "") {
+        result += "<h2 style='padding:20px 10px 30px;'>No products of this brand</h2>";
+    }
     $("#display-products").html(result);
 }
 
