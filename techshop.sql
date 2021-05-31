@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2021 at 10:21 AM
+-- Generation Time: May 31, 2021 at 07:26 PM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,8 +40,8 @@ INSERT INTO `brand` (`id_brand`, `brand_name`) VALUES
 (1, 'Apple'),
 (5, 'Asus'),
 (7, 'Huawei'),
+(13, 'Lenovo'),
 (6, 'Nokia'),
-(4, 'Philips'),
 (3, 'Samsung'),
 (2, 'Xiaomi');
 
@@ -56,7 +56,7 @@ CREATE TABLE `product` (
   `product_name` varchar(50) NOT NULL,
   `product_price` int(10) NOT NULL,
   `product_description` varchar(255) NOT NULL,
-  `image` varchar(100) NOT NULL,
+  `image` text NOT NULL,
   `id_brand` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -71,7 +71,8 @@ INSERT INTO `product` (`id_product`, `product_name`, `product_price`, `product_d
 (4, 'Redmi Note 10 Dual Sim', 3999, 'SISTEM DE OPERARE: Android 11, MIUI 12\r\nPROCESOR Qualcomm SDM678 Snapdragon 678 (11 nm)\r\nMEMORIE: 4 GB RAM 64GB\r\nGENERAL: USB Type-C 2.0 microSDXC (dedicated slot)', 'images/22grey1-536x536.png', 2),
 (5, 'Galaxy M51 Dual Sim M515', 7449, 'Operation System: Android\r\nStorage: 128 GB\r\nWeight (G) 213\r\nVideo resolution 4K\r\nPROCESOR: Octa Core\r\nUSB Type-C, USB 2.0\r\n', 'images/Telefon-SAMSUNG-Galaxy-M51-Black_2-536x536.jpg', 3),
 (6, 'Galaxy A52 (A525)', 6449, 'Operation system: Android 11, One UI 3.1\r\nDisplay: 6.5\", 1080 x 2400 Super AMOLED\r\nProcessor: Qualcomm SM7125 Snapdragon 720G (8 nm)\r\nMemory: 128GB 4GB RAM\r\nBattery: 4500 mAh\r\nDimensions: 159.9 x 75.1 x 8.4 mm, 189 g\r\nPorts:\r\nDual SIM (Nano-SIM)\r\nmicroSDX', 'images/SamsungGalaxyA525G-536x536.png', 3),
-(7, 'P40 5G Dual Sim', 11999, 'Operation system: Android 10.0 (AOSP + HMS); EMUI 10.1\r\nCamera: MAIN CAMERA - 50 MP + 8 MP + 16 MP, SELFIE CAMERA - 32 MP\r\nDisplay: 6.1 inches, 1080 x 2340 pixels\r\nMemory: 128 GB 8GB RAM\r\nBattery: 3800 mAh\r\nDimension: 148.9 x 71.1 x 8.5 mm, 175 g\r\n', 'images/huawei-p40-5g-dual-sim-128gb-gold-8gb-ram.jpg', 7);
+(7, 'P40 5G Dual Sim', 11999, 'Operation system: Android 10.0 (AOSP + HMS); EMUI 10.1\r\nCamera: MAIN CAMERA - 50 MP + 8 MP + 16 MP, SELFIE CAMERA - 32 MP\r\nDisplay: 6.1 inches, 1080 x 2340 pixels\r\nMemory: 128 GB 8GB RAM\r\nBattery: 3800 mAh\r\nDimension: 148.9 x 71.1 x 8.5 mm, 175 g\r\n', 'images/huawei-p40-5g-dual-sim-128gb-gold-8gb-ram.jpg', 7),
+(27, 'Lenovo Legion 2 Pro', 12599, 'Titanium White, Ultimate Black, Dual SIM, RGB light panel, 6 pressure sensitive zones, Corning Gorilla Glass 5', 'https://phonetechx.com/wp-content/uploads/2021/03/Lenovo-Legion-2-Pro-7.jpg', 13);
 
 --
 -- Indexes for dumped tables
@@ -99,13 +100,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id_product` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_product` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Constraints for dumped tables
