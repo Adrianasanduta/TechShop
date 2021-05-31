@@ -11,6 +11,7 @@
         success: function(res){
             res = JSON.parse(res);
                 var result = "";
+                if(res.length > 0){
                 for (let i = 0; i < res.length; i++) {
                     result += "<div class='col-xs-3 data-cards text-center'>";
                     result += `<div class="card product-card" data-id=${res[i].product_id}>`;
@@ -22,6 +23,9 @@
                     result += "</div>";
                     result += "</div>";
                     result += "</div>";
+                }}
+                else {
+                    result += "<h2 style='padding:20px 10px 30px;'>No results found</h2>";
                 }
                 $("#display-products").html(result);
 
