@@ -10,7 +10,8 @@ class Product{
 
 $search = $_REQUEST['search'];
 $products = array();
-$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
+//$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
+$dbc = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'admin', 'Ecaterina', 'techshop'); 
 $query = "SELECT p.id_product AS id_prod, p.product_name AS prod_name, p.product_price AS prod_price, p.product_description AS prod_desc, p.image AS prod_image FROM product p JOIN brand b ON p.id_brand=b.id_brand WHERE p.product_name LIKE '%$search%' || p.product_description LIKE '%$search%' || p.product_price LIKE '%$search%' || b.brand_name LIKE '%$search%'";
 
 

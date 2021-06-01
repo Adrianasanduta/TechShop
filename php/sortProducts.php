@@ -10,7 +10,8 @@ class Product{
 $columnName = $_GET['columnName'];
 $sort = $_GET['sort'];
 $products = array();
-$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
+//$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
+$dbc = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'admin', 'Ecaterina', 'techshop'); 
 $query = "SELECT id_product AS id_prod, product_name AS prod_name, product_price AS prod_price, product_description AS prod_desc, image AS prod_image FROM product ORDER BY `{$columnName}` ";
 if(($sort==1))
  {
