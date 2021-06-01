@@ -101,22 +101,27 @@
                                     <h5 class="modal-title" id="staticBackdropLabel">Enter new product:</h5>
                                 </div>
                                 <div class="modal-body">
+                                    <label for="productName">*Product Name:</label>
                                     <input type="text" class="form-control" id="productName" name="name_product"
                                         placeholder="Enter the name">
                                     <br>
                                     <div id="brandList">
-                                        <label for="brand">Choose a brand:</label>
+                                        <label for="brand">*Choose a brand:</label>
                                         <select name="cars" id="productCat"> </select>
                                     </div>
                                     <br>
+                                    <label for="productDesc">*Product description:</label>
                                     <input type="text" class="form-control" id="productDesc" name="desc_product"
                                         placeholder="Enter the description">
                                     <br>
+                                    <label for="productPrice">*Product price:</label>
                                     <input type="number" min="0.01" step="0.01" class="form-control" id="productPrice"
                                         name="name_price" placeholder="Enter the price">
                                     <br>
+                                    <label for="productImage">*Product image:</label>
                                     <input type="file" class="form-control" id="productImage" name="name_image"
                                         placeholder="Insert the image URL here">
+                                    <h6>*All fields are mandatory</h6>
                                 </div>
                                 <div class="modal-footer justify-content-center">
                                     <button type="button" class="btn btn-secondary"
