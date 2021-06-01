@@ -10,6 +10,7 @@ function loadData() {
         success: function (res) {
 
             res = JSON.parse(res);
+            window.products = res;
             var result = "";
             for (let i = 0; i < res.length; i++) {
                 result += `
@@ -53,5 +54,33 @@ function loadDataCat() {
             $("#display-categories").html(result);
         }
     });
+}
+function showProductsByCategory(id) {
+    console.log(id);
+    var result = "";
+    const products = window.products;
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].product_category == id || id === null) {
+            result += `
+                <div class='col-xs-3 data-cards text-center'>
+                    <div class="card product-card" data-id=${products[i].product_id}>   
+                        <div class="edit-container">
+                            <i onclick="editProduct(${products[i].product_id})" class="far fa-edit"></i>
+                            <i onclick="deleteProduct(${products[i].product_id})"class="far fa-trash-alt"></i>
+                        </div>  
+                        <img src='${products[i].product_image}' class='card-img-top prod-image'>
+                        <div class='card-body'>
+                            <h5 class='card-title prod-title'>${products[i].product_name}</h5>
+                            <p class='card-text prod-desc'>${products[i].product_description}</p>
+                            <h5 class='card-text prod-price'>${products[i].product_price} Lei</h5>
+                        </div>
+                    </div>
+                </div>`;
+        }
+    }
+    if (result == "") {
+        result += "<h2 style='padding:20px 10px 30px;'>No products of this brand</h2>";
+    }
+    $("#display-products").html(result);
 }
 

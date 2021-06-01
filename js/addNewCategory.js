@@ -1,10 +1,10 @@
 function addNewCategory() {
     console.log("new Category Added");
     let obj = {
-        brand_name: $('#categoryName').val()
+        brand_name: $('#categoryName').val().trim(),
     };
-    if ($('#categoryName').val() == "") {
-        alert('No blank values allowed')
+    if ($('#categoryName').val().trim() == "") {
+        alert('No blank values allowed');
     }
     else {
         $.ajax({
@@ -13,6 +13,7 @@ function addNewCategory() {
             data: obj,
             success: function (res) {
                 console.log(res);
+                $("#staticBackdrop").modal("hide");
                 loadDataCat();
                 $('#categoryName').val("");
             }

@@ -1,22 +1,25 @@
 function deleteProduct(id) {
     console.log("deleted product " + id);
- $.ajax({
-        type: "DELETE",
-        url: "php/deleteProduct.php?id=" + id,
-        success: function (res) {
-            loadData();
-        }
-    });
+    if (confirm("Do you want to permanently delete the product?")) {
+        $.ajax({
+            type: "DELETE",
+            url: "php/deleteProduct.php?id=" + id,
+            success: function (res) {
+                loadData();
+            }
+        });
+    }
 }
 
 function deleteCategory(id) {
     console.log("deleted category " + id);
-    $.ajax({
-        type: "DELETE",
-        url: "php/deleteCategory.php?id=" + id,
-        success: function (res) {
-            loadDataCat();
-        }
-    });
+    if (confirm("Do you want to permanently delete the category?")) {
+        $.ajax({
+            type: "DELETE",
+            url: "php/deleteCategory.php?id=" + id,
+            success: function (res) {
+                loadDataCat();
+            }
+        });
+    }
 }
-
