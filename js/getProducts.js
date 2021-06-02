@@ -34,7 +34,7 @@ function loadDataCat() {
                         <i onclick="showCategoryEditor(${res[i].brand_id})" class="far fa-edit"></i>
                         <i onclick="deleteCategory(${res[i].brand_id})"class="far fa-trash-alt"></i>
                     </div>  
-                    <div> ${res[i].brand_name}</div>
+                    <div onclick="showProductsByCategory(${res[i].brand_id})"> ${res[i].brand_name}</div>
                 </button>`;
             }
             $("#display-categories").html(result);
