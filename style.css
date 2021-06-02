@@ -38,7 +38,6 @@ main {
 .categories {
     background-color: rgb(247, 248, 248);
     padding: 0px;
-    border: 1px solid #421774;
     position:relative;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -53,9 +52,6 @@ main {
     border-color: #421774;
     border-radius:0%;
 }
-.regular .list-group-item:last-child {
-    border-bottom: 1px solid #421774;
-}
 
 .list-group {
     border-radius:0%;
@@ -63,12 +59,13 @@ main {
 
 .list-header {
     width:100%;
-   border-bottom: 1px solid #421774;
-   border-top: 1px solid #421774;
+   border: 1px solid #421774;
+   border-bottom: none;
 }
 .list-bottom {
     width:100%;
-   border-bottom: 1px solid #421774;
+   border: 1px solid #421774;
+   border-top: none;
 }
 
 .btn-outline-success {
@@ -121,7 +118,7 @@ header{
     display: flex;
 }
 
-.list-group:hover .edit-container {
+.category-list:hover .edit-container {
     display: flex;
 }
 .add-product-dialog {

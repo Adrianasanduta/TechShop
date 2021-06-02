@@ -43,13 +43,13 @@ function loadDataCat() {
             var result = "";
             for (let i = 0; i < res.length; i++) {
                 result += `
-                <div class='list-group list-group-flush regular'>
+                <button type='button' class='list-group-item list-group-item-action category-list'>
                     <div class="edit-container">
                         <i onclick="showCategoryEditor(${res[i].brand_id})" class="far fa-edit"></i>
                         <i onclick="deleteCategory(${res[i].brand_id})"class="far fa-trash-alt"></i>
                     </div>  
-                    <button type='button' onclick="showProductsByCategory(${res[i].brand_id})" class='list-group-item list-group-item-action '> ${res[i].brand_name}</button>
-                </div>`;
+                    <div> ${res[i].brand_name}</div>
+                </button>`;
             }
             $("#display-categories").html(result);
         }

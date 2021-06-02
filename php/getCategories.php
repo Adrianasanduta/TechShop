@@ -5,7 +5,8 @@
     }
 
     $categories = array();
-    $dbc = mysqli_connect('localhost', 'root', '', 'techshop');
+    //$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
+    $dbc = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'admin', 'Ecaterina', 'techshop');
     $query = "SELECT id_brand, brand_name FROM brand ORDER BY brand.id_brand ASC";
     $data = mysqli_query($dbc, $query);
    while($row = mysqli_fetch_assoc($data)){
