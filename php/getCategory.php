@@ -1,6 +1,10 @@
-<?php  
-$conn = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'admin', 'Ecaterina', 'techshop');
-$sql = "SELECT * FROM brand where id_brand='".$_REQUEST['id']."'";
+<?php 
+    $host = getenv("TECHSHOP_HOST");
+    $user = getenv("TECHSHOP_USER");
+    $password = getenv("TECHSHOP_PASSWORD");
+    $dbName = getenv("TECHSHOP_DB_NAME");
+    $dbc = mysqli_connect($host, $user, $password, $dbName);
+	$sql = "SELECT * FROM brand where id_brand='".$_REQUEST['id']."'";
 				$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 					$i=-1;

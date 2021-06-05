@@ -9,11 +9,14 @@
     }
 
     $products = array();
-    //$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
-$dbc = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'admin', 'Ecaterina', 'techshop'); 
+    $host = getenv("TECHSHOP_HOST");
+    $user = getenv("TECHSHOP_USER");
+    $password = getenv("TECHSHOP_PASSWORD");
+    $dbName = getenv("TECHSHOP_DB_NAME");
+    $dbc = mysqli_connect($host, $user, $password, $dbName);
     $query = "SELECT id_product AS id_prod, product_name AS prod_name,id_brand, product_price AS prod_price, product_description AS prod_desc, image AS prod_image FROM product";
     $data = mysqli_query($dbc, $query);
-   while($row = mysqli_fetch_assoc($data)){
+    while($row = mysqli_fetch_assoc($data)){
         $product = new Product();
         $product->product_id = $row['id_prod'];
         $product->product_name = $row['prod_name'];
@@ -25,4 +28,4 @@ $dbc = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'ad
    }
    mysqli_close($dbc);
    echo json_encode($products);
-   
+?>
