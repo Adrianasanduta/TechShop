@@ -84,15 +84,21 @@ header{
     padding: 10px;
 }
 
-.prod-title{
+.prod-title {
     width: 100%;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;
+    border-bottom: 3px solid transparent; 
+}
+.prod-title:hover {
+    /* background-color: rgba(13,110,253, 0.3); */
+    border-bottom: 3px solid rgba(13,110,253, 0.8); 
+    cursor: pointer;
 }
 
-.prod-desc{
+.prod-desc {
     width: 100%;
     overflow: hidden;
     display: -webkit-box;
@@ -100,7 +106,7 @@ header{
     -webkit-box-orient: vertical;  
   }
 
-.prod-image{
+.prod-image {
      width: 100%;
      height: 200px;
      padding: 1em;
@@ -168,3 +174,15 @@ header{
     opacity: 1;
   }
   
+.preview-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-image {
+    width: 100%;
+    height: 400px;
+    padding: 1em;
+    object-fit: contain;
+}
