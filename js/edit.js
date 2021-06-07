@@ -1,7 +1,6 @@
 
 //edit functionality for product
 //function for displaying inputs modal with data from db as values
-
 function showProductEditor(id) {
     console.log("editing product " + id);
     $("#id_product").val(id);
@@ -13,7 +12,7 @@ function showProductEditor(id) {
     // reader.readAsDataURL();
 
     // reader.onload = function (event) {
-    
+
     $.ajax({
         type: "GET",
         async: true,
@@ -27,15 +26,16 @@ function showProductEditor(id) {
             $("#product_name").val(dataArr[0].product_name);
             $("#product_description").val(dataArr[0].product_description);
             $("#product_price").val(dataArr[0].product_price);
-            $("#product_category option[value="+dataArr[0].id_brand+"]").attr('selected', 'selected');
-            const dT = new ClipboardEvent('').clipboardData || 
-            new DataTransfer();
-            dT.items.add(new File(['foo'],dataArr[0].product_image ));
+            // $("#product_category option:selected").attr("selected", false)
+            console.log(typeof dataArr[0].id_brand);
+            $("#product_category").val(dataArr[0].id_brand).change();
+            const dT = new ClipboardEvent('').clipboardData ||
+                new DataTransfer();
+            dT.items.add(new File(['foo'], dataArr[0].product_image));
             product_image.files = dT.files;
-            
+            window.editImage = dataArr[0].product_image;
         }
     });
-//}
 }
 
 //function for saving changes and loading changes on page
@@ -43,37 +43,29 @@ function showProductEditor(id) {
 $("#save-edited").on('click', function editData() {
 
     const id = $("#id_product").val();
-
     let photo = $("#product_image").prop("files")[0];
-
     let obj = {
         id_product: id,
         product_name: $("#product_name").val(),
         product_description: $("#product_description").val(),
         product_price: Number($("#product_price").val()),
         product_cat: Number($("#product_cat").val()),
-        
     }
 
     var reader = new FileReader();
-
-        reader.readAsDataURL(photo);
-
-        reader.onload = function (event) {
-        obj.product_image = event.target.result;
-    $.ajax({
-        type: "POST",
-        url: "php/editProduct.php",
-        data: obj,
-        success: function (res) {
-            
+    reader.readAsDataURL(photo);
+    reader.onload = function (event) {
+        obj.product_image = event.target.result.startsWith("data:image") ? event.target.result : window.editImage;
+        $.ajax({
+            type: "POST",
+            url: "php/editProduct.php",
+            data: obj,
+            success: function (res) {
                 loadData();
                 $("#edit-product-modal").modal('hide');
-        
-        }
-    
-    });
-        }
+            }
+        });
+    }
 });
 
 

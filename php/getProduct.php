@@ -1,7 +1,16 @@
 <?php  
-$conn = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'admin', 'Ecaterina', 'techshop');
+    if(explode(":",$_SERVER["HTTP_HOST"])[0] == "localhost") {
+        $host = getenv("TECHSHOP_HOST");
+        $user = getenv("TECHSHOP_USER");
+        $password = getenv("TECHSHOP_PASSWORD");
+        $dbName = getenv("TECHSHOP_DB_NAME");
+        $dbc = mysqli_connect($host, $user, $password, $dbName);
+    } else {
+       // $dbc = mysqli_connect()
+       //put here aws credentials
+    }
 $sql = "SELECT * FROM product p JOIN brand b ON p.id_brand=b.id_brand where id_product='".$_REQUEST['id']."'";
-				$result = $conn->query($sql);
+				$result = $dbc->query($sql);
 				if ($result->num_rows > 0) {
 					$i=-1;
 					while($row = $result->fetch_assoc()) {
@@ -17,5 +26,5 @@ $sql = "SELECT * FROM product p JOIN brand b ON p.id_brand=b.id_brand where id_p
 				} else {
 					echo "0 results";
 				}
-				$conn->close();
+				$dbc->close();
 				echo json_encode($arr);
