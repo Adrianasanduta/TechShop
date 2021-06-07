@@ -24,7 +24,7 @@ function loadDataCat() {
         type: "GET",
         url: "php/getCategories.php",
         success: function (res) {
-
+            console.log(res);
             res = JSON.parse(res);
             var result = "";
             for (let i = 0; i < res.length; i++) {

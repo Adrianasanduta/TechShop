@@ -27,6 +27,17 @@ For this project we use XAMPP.
 3. Open phpmyadmin
 4. Create `techshop` database
 5. Import database from `techshop.sql`
+6. Set environment variables at the end of file `/C/xampp/apache/conf/httpd.conf` 
+```
+# techshopenvs
+SetEnv TECHSHOP_HOST localhost
+SetEnv TECHSHOP_USER root
+SetEnv TECHSHOP_PASSWORD ''
+SetEnv TECHSHOP_DB_NAME techshop
+```
+## Production
+
+- Make sure environments variables are set in AWS environment
 
 ## Libraries
 

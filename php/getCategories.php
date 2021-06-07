@@ -5,8 +5,16 @@
     }
 
     $categories = array();
-    //$dbc = mysqli_connect('localhost', 'root', '', 'techshop');
-    $dbc = mysqli_connect('techshopdb.c5ixubicto8v.us-east-2.rds.amazonaws.com', 'admin', 'Ecaterina', 'techshop');
+    if(explode(":",$_SERVER["HTTP_HOST"])[0] == "localhost") {
+        $host = getenv("TECHSHOP_HOST");
+        $user = getenv("TECHSHOP_USER");
+        $password = getenv("TECHSHOP_PASSWORD");
+        $dbName = getenv("TECHSHOP_DB_NAME");
+        $dbc = mysqli_connect($host, $user, $password, $dbName);
+    } else {
+       // $dbc = mysqli_connect()
+       //put here aws credentials
+    }
     $query = "SELECT id_brand, brand_name FROM brand ORDER BY brand.id_brand ASC";
     $data = mysqli_query($dbc, $query);
    while($row = mysqli_fetch_assoc($data)){
@@ -17,3 +25,4 @@
    }
    mysqli_close($dbc);
    echo json_encode($categories);
+?>
