@@ -1,42 +1,29 @@
 function sortData(columnName, order) {
     console.log(columnName, order)
+    console.log(window.products)
+    const tempProducts = [...window.products] //copy products from window
+    tempProducts.sort((a, b) => {
+        let aField = a[columnName].toUpperCase();
+        let bField = b[columnName].toUpperCase();
 
-    if (order == 'asc') {
-        var sort = 1;
+        if (columnName === "product_price") {
+            aField = Number(aField);
+            bField = Number(bField);
+        }
 
-        $.ajax({
-            type: "GET",
-            data: { columnName: columnName, sort: sort },
-            url: "php/sortProducts.php",
-            success: function (res) {
+        if (aField < bField) {
+            return order == 'asc' ? -1 : 1;
+        }
 
-                res = JSON.parse(res);
-                var result = "";
-                for (let i = 0; i < res.length; i++) {
-                    result += createProductElement(res[i])
-                }
-                $("#display-products").html(result);
-            }
-        });
+        if (aField > bField) {
+            return order == 'asc' ? 1 : -1;
+        }
+
+        return 0;
+    })
+    let result = "";
+    for (let i = 0; i < tempProducts.length; i++) {
+        result += createProductElement(tempProducts[i])
     }
-
-
-    else if (order == 'desc') {
-        var sort = 0;
-        $.ajax({
-            type: "GET",
-            url: "php/sortProducts.php",
-            data: { columnName: columnName, sort: sort },
-            success: function (res) {
-
-                res = JSON.parse(res);
-                var result = "";
-                for (let i = 0; i < res.length; i++) {
-                    result += createProductElement(res[i])
-                }
-                $("#display-products").html(result);
-            }
-        });
-
-    }
+    $("#display-products").html(result);
 }
