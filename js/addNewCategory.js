@@ -12,7 +12,6 @@ function addNewCategory() {
             url: "php/addCategory.php",
             data: obj,
             success: function (res) {
-                console.log(res);
                 $("#staticBackdrop").modal("hide");
                 loadDataCat();
                 $('#categoryName').val("");

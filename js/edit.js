@@ -27,7 +27,6 @@ function showProductEditor(id) {
             $("#product_description").val(dataArr[0].product_description);
             $("#product_price").val(dataArr[0].product_price);
             // $("#product_category option:selected").attr("selected", false)
-            console.log(typeof dataArr[0].id_brand);
             $("#product_category").val(dataArr[0].id_brand).change();
             const dT = new ClipboardEvent('').clipboardData ||
                 new DataTransfer();

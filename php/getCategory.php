@@ -10,7 +10,7 @@
        //put here aws credentials
     }
 	$sql = "SELECT * FROM brand where id_brand='".$_REQUEST['id']."'";
-				$result = $conn->query($sql);
+				$result = $dbc->query($sql);
 				if ($result->num_rows > 0) {
 					$i=-1;
 					while($row = $result->fetch_assoc()) {
@@ -21,5 +21,5 @@
 				} else {
 					echo "0 results";
 				}
-				$conn->close();
+				$dbc->close();
 				echo json_encode($arr);

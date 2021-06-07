@@ -24,7 +24,6 @@ function loadDataCat() {
         type: "GET",
         url: "php/getCategories.php",
         success: function (res) {
-            console.log(res);
             res = JSON.parse(res);
             var result = "";
             for (let i = 0; i < res.length; i++) {
@@ -42,7 +41,6 @@ function loadDataCat() {
     });
 }
 function showProductsByCategory(id) {
-    console.log(id);
     var result = "";
     const products = window.products;
     for (let i = 0; i < products.length; i++) {
