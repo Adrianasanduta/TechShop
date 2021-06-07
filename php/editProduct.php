@@ -1,9 +1,10 @@
 <?php
-    $name = $_POST['name'];
-    $id = $_POST['id'];
-    $price= $_POST['price'];
-    $description=$_POST['description'];
-    $image=$_POST['image'];
+$name = $_POST['product_name'];
+$id = $_POST['id_product'];
+$price= $_POST['product_price'];
+$description=$_POST['product_description'];
+$image=$_POST['product_image'];
+$brand=$_POST['product_cat'];
 
     if(explode(":",$_SERVER["HTTP_HOST"])[0] == "localhost") {
         $host = getenv("TECHSHOP_HOST");

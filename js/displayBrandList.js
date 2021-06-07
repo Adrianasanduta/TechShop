@@ -9,6 +9,7 @@ function displayBrandList(id) {
                 result += `<option id="productCat${res[i].brand_id}" value="${res[i].brand_id}">${res[i].brand_name}</option>`;
             };
             $("#productCat").html(result);
+            $("#product_category").html(result);
         }
     });
 }
