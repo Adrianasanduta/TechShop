@@ -139,6 +139,50 @@
                         </div>
                     </div>
                     <!-- End of modal-->
+
+                     <!-- Modal for edit product-->
+                     <div class="modal fade" id="edit-product-modal" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h5 class="modal-title" id="staticBackdropLabel">Edit product:</h5>
+                             </div>
+                             <div class="modal-body">
+                                 <label for="productName">*Product Name:</label>
+                                 <input type="text" class="form-control" id="product_name" name="name_product"
+                                     placeholder="Enter the name">
+                                 <br>
+                                 <div id="brandList">
+                                     <label for="brand">*Choose a brand:</label>
+                                     <select name="pc" id="product_category"> </select>
+                                 </div>
+                                 <br>
+                                 <label for="productDesc">*Product description:</label>
+                                 <input type="text" class="form-control" id="product_description" name="desc_product"
+                                     placeholder="Enter the description">
+                                 <br>
+                                 <label for="productPrice">*Product price:</label>
+                                 <input type="number" min="0.01" step="0.01" class="form-control" id="product_price"
+                                     name="name_price" placeholder="Enter the price">
+                                 <br>
+                                 <label for="productImage">*Product image:</label>
+                                 <input type="file" class="form-control" id="product_image" name="name_image"
+                                     placeholder="Insert the image URL here">
+                                 <h6>*All fields are mandatory</h6>
+                             </div>
+                             <div class="modal-footer justify-content-center">
+                                <input type="hidden" id="id_product">
+                                 <button type="button" class="btn btn-secondary"
+                                     data-bs-dismiss="modal">Cancel</button>
+                                 <button type="button" id="save-edited" class="btn btn-outline-primary">
+                                     Save</button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- End of edit modal-->
+
                 </div>
             </div>
         </div>

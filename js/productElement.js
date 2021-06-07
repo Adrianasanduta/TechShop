@@ -4,7 +4,7 @@ function createProductElement(product) {
     <div class='col-xs-3 data-cards text-center'>
         <div class="card product-card" data-id=${product.product_id}>   
             <div class="edit-container">
-                <i onclick="editProduct(${product.product_id})" class="far fa-edit"></i>
+                <i onclick="showProductEditor(${product.product_id}); displayBrandList(); " class="far fa-edit"></i>
                 <i onclick="deleteProduct(${product.product_id})"class="far fa-trash-alt"></i>
             </div>  
             <img src='${product.product_image}' class='card-img-top prod-image'>
