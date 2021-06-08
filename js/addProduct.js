@@ -12,10 +12,12 @@ function addProduct(id) {
         !obj.product_desc ||
         !obj.product_price ||
         !photo ||
-        !obj.product_cat
+        !obj.product_cat ||
+        $("#productPrice").val().includes("-")==true||
+        $("#productPrice").val().includes("+")==true 
     ) {
         alert("No blank or invalid values allowed");
-    }
+    } 
     else {
         var reader = new FileReader();
 

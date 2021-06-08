@@ -53,7 +53,9 @@ $("#save-edited").on('click', function editData() {
     if (
         $("#product_name").val()=="" ||
         $("#product_description").val()=="" ||
-        $("#product_price").val()==""
+        $("#product_price").val()=="" ||
+        $("#product_price").val().includes("-")==true||
+        $("#product_price").val().includes("+")==true 
     ) {
         alert("No blank or invalid values allowed");
     }
