@@ -50,7 +50,14 @@ $("#save-edited").on('click', function editData() {
         product_price: Number($("#product_price").val()),
         product_cat: Number($("#product_cat").val()),
     }
-
+    if (
+        $("#product_name").val()=="" ||
+        $("#product_description").val()=="" ||
+        $("#product_price").val()==""
+    ) {
+        alert("No blank or invalid values allowed");
+    }
+    else {
     var reader = new FileReader();
     reader.readAsDataURL(photo);
     reader.onload = function (event) {
@@ -65,6 +72,7 @@ $("#save-edited").on('click', function editData() {
             }
         });
     }
+}
 });
 
 
@@ -103,22 +111,22 @@ $("#save").on('click', function editSend() {
         id_brand: id,
         brand_name: $('#brand_name').val()
     }
-
+    if ($('#brand_name').val() == '') {
+        alert('Enter brand name first');
+        return false;
+    } else {
     $.ajax({
         type: "POST",
         url: "php/editCategory.php",
         data: obj,
         success: function (res) {
-            if ($('#brand_name').val() == '') {
-                alert('Enter product name first');
-                return false;
-            } else {
+           
                 loadDataCat();
                 $(".edit-category-modal").modal('hide');
             }
-        }
-    });
-
+    
+        })
+    };
 });
 
 

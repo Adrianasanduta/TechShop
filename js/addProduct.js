@@ -7,7 +7,6 @@ function addProduct(id) {
         product_price: Number($("#productPrice").val()),
         product_cat: Number($("#productCat").val()),
     };
-
     if (
         !obj.product_name ||
         !obj.product_desc ||
@@ -15,8 +14,9 @@ function addProduct(id) {
         !photo ||
         !obj.product_cat
     ) {
-        alert("No blank values allowed");
-    } else {
+        alert("No blank or invalid values allowed");
+    }
+    else {
         var reader = new FileReader();
 
         reader.readAsDataURL(photo);
