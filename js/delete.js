@@ -14,7 +14,7 @@ function deleteProduct(id) {
 function deleteCategory(id) {
     console.log("deleted category " + id);
 
-    if (confirm("Do you want to permanently delete the category? By deleting the category you you will also delete all the products related to it")) {
+    if (confirm("Do you want to permanently delete the category? By deleting the category you will also delete all the products related to it")) {
         // var products = [];
         // $('#product').each(function() {
 
