@@ -7,16 +7,16 @@ function addProduct(id) {
         product_price: Number($("#productPrice").val()),
         product_cat: Number($("#productCat").val()),
     };
-
     if (
-        !obj.product_name ||
-        !obj.product_desc ||
-        !obj.product_price ||
-        !photo ||
-        !obj.product_cat
+        $("#productName").val()=="" ||
+        $("#productDesc").val()=="" ||
+        $("#productPrice").val()==""
     ) {
-        alert("No blank values allowed");
-    } else {
+        alert("No blank or invalid values allowed");
+    } else if( $("#productPrice").val()=="0") {
+        alert("Price should be more than 0")
+    }
+    else {
         var reader = new FileReader();
 
         reader.readAsDataURL(photo);

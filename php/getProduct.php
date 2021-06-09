@@ -6,8 +6,7 @@
         $dbName = getenv("TECHSHOP_DB_NAME");
         $dbc = mysqli_connect($host, $user, $password, $dbName);
     } else {
-       // $dbc = mysqli_connect()
-       //put here aws credentials
+  //$dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_NAME'))
     }
 $sql = "SELECT * FROM product p JOIN brand b ON p.id_brand=b.id_brand where id_product='".$_REQUEST['id']."'";
 				$result = $dbc->query($sql);
