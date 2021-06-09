@@ -86,6 +86,11 @@ header{
     max-width:20vw;
 }
 
+.product-card{
+    min-height: 380px;
+    max-height: 400px;
+}
+
 .prod-title {
     width: 100%;
     overflow: hidden;
