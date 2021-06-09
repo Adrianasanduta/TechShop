@@ -58,6 +58,8 @@ $("#save-edited").on('click', function editData() {
         $("#product_price").val().includes("+")==true 
     ) {
         alert("No blank or invalid values allowed");
+    } else if( $("#product_price").val()=="0") {
+        alert("Price should be more than 0")
     }
     else {
     var reader = new FileReader();

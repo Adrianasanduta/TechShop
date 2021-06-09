@@ -8,16 +8,14 @@ function addProduct(id) {
         product_cat: Number($("#productCat").val()),
     };
     if (
-        !obj.product_name ||
-        !obj.product_desc ||
-        !obj.product_price ||
-        !photo ||
-        !obj.product_cat ||
-        $("#productPrice").val().includes("-")==true||
-        $("#productPrice").val().includes("+")==true 
+        $("#productName").val()=="" ||
+        $("#productDesc").val()=="" ||
+        $("#productPrice").val()==""
     ) {
         alert("No blank or invalid values allowed");
-    } 
+    } else if( $("#productPrice").val()=="0") {
+        alert("Price should be more than 0")
+    }
     else {
         var reader = new FileReader();
 
