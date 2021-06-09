@@ -1,7 +1,14 @@
+
+
 function sortData(columnName, order) {
     console.log(columnName, order)
     console.log(window.products)
-    const tempProducts = [...window.products] //copy products from window
+    let tempProducts;
+    if (window.filteredProducts) {
+        tempProducts = [...window.filteredProducts]
+    } else {
+        tempProducts = [...window.products]
+    } //copy products from window
     tempProducts.sort((a, b) => {
         let aField = a[columnName].toUpperCase();
         let bField = b[columnName].toUpperCase();
@@ -27,3 +34,4 @@ function sortData(columnName, order) {
     }
     $("#display-products").html(result);
 }
+

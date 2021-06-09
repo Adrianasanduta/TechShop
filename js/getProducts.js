@@ -43,8 +43,10 @@ function loadDataCat() {
 function showProductsByCategory(id) {
     var result = "";
     const products = window.products;
+    window.filteredProducts = [];
     for (let i = 0; i < products.length; i++) {
         if (products[i].product_category == id || id === null) {
+            window.filteredProducts.push(products[i]);
             result += createProductElement(products[i])
         }
     }

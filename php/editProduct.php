@@ -13,7 +13,7 @@ $brand=$_POST['product_cat'];
         $dbName = getenv("TECHSHOP_DB_NAME");
         $dbc = mysqli_connect($host, $user, $password, $dbName);
     } else {
-//  $dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_NAME')) 
+//  $dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_DB_NAME')) 
     }
     $query = "UPDATE product SET product_name='$name', product_price='$price', product_description='$description', image='$image', id_brand='$brand' WHERE product.id_product=$id";
     //think about adding image

@@ -8,7 +8,7 @@
         $dbName = getenv("TECHSHOP_DB_NAME");
         $dbc = mysqli_connect($host, $user, $password, $dbName);
     } else {
-//  $dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_NAME')) 
+//  $dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_DB_NAME')) 
     }
     $query = "DELETE FROM brand WHERE brand.id_brand=$idFromGet";
     $data = mysqli_query($dbc, $query);
