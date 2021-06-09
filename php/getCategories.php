@@ -12,8 +12,7 @@
         $dbName = getenv("TECHSHOP_DB_NAME");
         $dbc = mysqli_connect($host, $user, $password, $dbName);
     } else {
-       // $dbc = mysqli_connect()
-       //put here aws credentials
+   //     $dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_NAME'))
     }
     $query = "SELECT id_brand, brand_name FROM brand ORDER BY brand.id_brand ASC";
     $data = mysqli_query($dbc, $query);
