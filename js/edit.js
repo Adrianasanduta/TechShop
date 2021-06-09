@@ -2,7 +2,7 @@
 //edit functionality for product
 //function for displaying inputs modal with data from db as values
 function showProductEditor(id) {
-    console.log("editing product " + id);
+    console.log("editing product " + id, );
     $("#id_product").val(id);
 
 
@@ -40,7 +40,7 @@ function showProductEditor(id) {
 //function for saving changes and loading changes on page
 
 $("#save-edited").on('click', function editData() {
-
+console.log($("#product_category").val())
     const id = $("#id_product").val();
     let photo = $("#product_image").prop("files")[0];
     let obj = {
@@ -48,7 +48,7 @@ $("#save-edited").on('click', function editData() {
         product_name: $("#product_name").val(),
         product_description: $("#product_description").val(),
         product_price: Number($("#product_price").val()),
-        product_cat: Number($("#product_cat").val()),
+        product_cat: Number($("#product_category").val()),
     }
 
     var reader = new FileReader();

@@ -16,7 +16,7 @@ $brand=$_POST['product_cat'];
        // $dbc = mysqli_connect()
        //put here aws credentials
     }
-    $query = "UPDATE product SET product_name='$name', product_price='$price', product_description='$description', image='$image' WHERE product.id_product=$id";
+    $query = "UPDATE product SET product_name='$name', product_price='$price', product_description='$description', image='$image', id_brand='$brand' WHERE product.id_product=$id";
     //think about adding image
     $data = mysqli_query($dbc, $query);
     mysqli_close($dbc);

@@ -1,7 +1,7 @@
 function createProductElement(product) {
     const previewId = 'product-preview' + Math.random().toString().slice(2)
     return `
-    <div class='col-xs-3 data-cards text-center'>
+    <div class='col-sm-12 col-md-3 data-cards text-center'>
         <div class="card product-card" data-id=${product.product_id}>   
             <div class="edit-container">
                 <i onclick="showProductEditor(${product.product_id}); displayBrandList(); " class="far fa-edit"></i>
