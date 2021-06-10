@@ -1,13 +1,11 @@
 <?php  
-    if(explode(":",$_SERVER["HTTP_HOST"])[0] == "localhost") {
-        $host = getenv("TECHSHOP_HOST");
-        $user = getenv("TECHSHOP_USER");
-        $password = getenv("TECHSHOP_PASSWORD");
-        $dbName = getenv("TECHSHOP_DB_NAME");
-        $dbc = mysqli_connect($host, $user, $password, $dbName);
-    } else {
-  //$dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_DB_NAME'))
-    }
+
+    $host = getenv("TECHSHOP_HOST");
+    $user = getenv("TECHSHOP_USER");
+    $password = getenv("TECHSHOP_PASSWORD");
+    $dbName = getenv("TECHSHOP_DB_NAME");
+    $dbc = mysqli_connect($host, $user, $password, $dbName);
+
 $sql = "SELECT * FROM product p JOIN brand b ON p.id_brand=b.id_brand where id_product='".$_REQUEST['id']."'";
 				$result = $dbc->query($sql);
 				if ($result->num_rows > 0) {
@@ -27,3 +25,4 @@ $sql = "SELECT * FROM product p JOIN brand b ON p.id_brand=b.id_brand where id_p
 				}
 				$dbc->close();
 				echo json_encode($arr);
+?>

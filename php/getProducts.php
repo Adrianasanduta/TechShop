@@ -9,15 +9,12 @@
     }
 
     $products = array();
-    if(explode(":",$_SERVER["HTTP_HOST"])[0] == "localhost") {
-        $host = getenv("TECHSHOP_HOST");
-        $user = getenv("TECHSHOP_USER");
-        $password = getenv("TECHSHOP_PASSWORD");
-        $dbName = getenv("TECHSHOP_DB_NAME");
-        $dbc = mysqli_connect($host, $user, $password, $dbName);
-    } else {
-  //$dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_DB_NAME'))  
-    }
+    $host = getenv("TECHSHOP_HOST");
+    $user = getenv("TECHSHOP_USER");
+    $password = getenv("TECHSHOP_PASSWORD");
+    $dbName = getenv("TECHSHOP_DB_NAME");
+    $dbc = mysqli_connect($host, $user, $password, $dbName);
+
     $query = "SELECT id_product AS id_prod, product_name AS prod_name,id_brand, product_price AS prod_price, product_description AS prod_desc, image AS prod_image FROM product";
     $data = mysqli_query($dbc, $query);
     while($row = mysqli_fetch_assoc($data)){
