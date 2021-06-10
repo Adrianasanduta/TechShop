@@ -5,18 +5,16 @@
     }
 
     $categories = array();
-    if(explode(":",$_SERVER["HTTP_HOST"])[0] == "localhost") {
-        $host = getenv("TECHSHOP_HOST");
-        $user = getenv("TECHSHOP_USER");
-        $password = getenv("TECHSHOP_PASSWORD");
-        $dbName = getenv("TECHSHOP_DB_NAME");
-        $dbc = mysqli_connect($host, $user, $password, $dbName);
-    } else {
-   //     $dbc = mysqli_connect(getenv('TECHSHOP_HOST'), getenv('TECHSHOP_USER'), getenv('TECHSHOP_PASSWORD'), getenv('TECHSHOP_DB_NAME'))
-    }
+
+    $host = getenv("TECHSHOP_HOST");
+    $user = getenv("TECHSHOP_USER");
+    $password = getenv("TECHSHOP_PASSWORD");
+    $dbName = getenv("TECHSHOP_DB_NAME");
+    $dbc = mysqli_connect($host, $user, $password, $dbName);
+
     $query = "SELECT id_brand, brand_name FROM brand ORDER BY brand.id_brand ASC";
     $data = mysqli_query($dbc, $query);
-   while($row = mysqli_fetch_assoc($data)){
+    while($row = mysqli_fetch_assoc($data)){
         $category = new category();
         $category->brand_id = $row['id_brand'];
         $category->brand_name = $row['brand_name'];
